@@ -1,1 +1,1 @@
-​[Prefix Algorithm](prefixAlgo.jpg)
+​Solved this problem using [Prefix Algorithm](prefixAlgo.jpg).
