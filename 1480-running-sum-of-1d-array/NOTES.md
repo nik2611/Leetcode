@@ -1,1 +1,1 @@
-​
+​[Prefix Algorithm](prefixAlgo.jpg)
