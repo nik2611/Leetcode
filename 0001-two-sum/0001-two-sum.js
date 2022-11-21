@@ -1,20 +1,22 @@
 /**
+ * Hash Map - 1 Pass
+ * Time O(N) | Space O(N)
+ * https://leetcode.com/problems/two-sum/
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
-    
-    var array = [];
-    for(let i=0; i<nums.length; i++) {
-        for(let j=i+1; j<=nums.length; j++) {
-            if(nums[i] + nums[j] == target){
-                array.push(i, j);
-                return array;
-            }
-        }
-    }
-    
-};
+var twoSum = (nums, target, map = new Map()) => {
+    for (let index = 0; index < nums.length; index++) {/* Time O(N) */
+        const num = nums[index];
+        const complement = (target - num);
+        const sumIndex = map.get(complement);
 
-twoSum([2,7,11,15], 9);
+        const isTarget = map.has(complement)
+        if (isTarget) return [ index, sumIndex ];
+
+        map.set(num, index);                                /* Space O(N) */
+    }
+
+    return [ -1, -1 ];
+}
